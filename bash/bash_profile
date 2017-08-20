@@ -1,0 +1,106 @@
+# Source .bashrc
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+# change umask to make directory sharing easier
+umask 0002
+
+# Revert to traditional ASCII collation order (not necessary for Mac OS)
+# export LANG=POSIX
+
+# ignore dupes in command history
+# && increase history size to 1000 lines
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+
+# global aliases
+alias profile="vim $HOME/.bash_profile"
+alias sp=". $HOME/.bash_profile"
+alias grep="grep --color"; export GREP_COLOR='0;31'
+alias ls="ls -G"; export LSCOLORS="bxex"
+alias lsl="ls -lFaith"
+alias cls="clear"
+alias logwatch="tail -f /var/log/system.log"
+
+# shell functions
+grab () {
+  ps aux | grep $1
+}
+
+serve () {
+  python -m http.server $1
+}
+
+port () {
+  lsof -i :$1
+}
+
+ds () {
+  echo "Disk Space Utilization for $HOSTNAME"
+  df -h
+}
+
+file_info () {
+  if [[ -e $1 ]]; then
+    echo -e "\nFile Type:"
+    file $1
+    echo -e "\nFile Status:"
+    stat $1
+  else
+    echo "$FUNCNAME: usage: $FUNCNAME file" >&2
+    return 1
+  fi
+}
+
+twigremote () {
+  for k in `git branch -r | grep -v HEAD | perl -pe 's/^..(.*?)( ->.*)?$/\1/'`; do
+    echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k
+  done | sort -r
+}
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# nodenv
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
+# jenv (configure JVM in jenv with `jenv add /Library/Java/JavaVirtualMachines/<version>/Contents/Home`)
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PIP_REQUIRE_VIRTUALENV=true
+gpip(){
+  PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+# rustup
+. $HOME/.cargo/env
+
+# postgres
+export PGDATA='/usr/local/var/postgres'
+export PGHOST=localhost
+alias start-pg='pg_ctl -l $PGDATA/server.log start'
+alias stop-pg='pg_ctl stop -m fast'
+alias show-pg-status='pg_ctl status'
+alias restart-pg='pg_ctl reload'
+
+# editor
+export VISUAL=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/vim
+
+# bash prompt && git
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+export PS1='\[\e[3m\]♖ ♔ ♖  \[\e[3m\]\W$(__git_ps1 " \[\e[3;31m\](%s)\[\e[0m\]")\[\e[3m\]\[\e[0m\] >>> '
+
+#tracing
+export PS4='$LINENO + '
+
+# path
+export PATH=~/Development/bin:"$PATH"
+export PATH
