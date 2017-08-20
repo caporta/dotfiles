@@ -33,6 +33,7 @@ Plugin 'regreplop.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 call vundle#end()
