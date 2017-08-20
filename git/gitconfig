@@ -1,0 +1,14 @@
+[core]
+	editor = vim
+[user]
+	name = Chris Aporta
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+	bi = bisect
+	dc = diff --cached
+	pushf = push --force-with-lease
+[push]
+	default = current
