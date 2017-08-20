@@ -1,0 +1,42 @@
+syntax on
+filetype off
+set number
+set ignorecase
+set smartcase
+set incsearch
+set ttimeoutlen=10
+set backspace=indent,eol,start
+
+"set runtime path to include Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'epmatsw/ag.vim'
+Plugin 'sjl/vitality.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/tpope-vim-abolish'
+Plugin 'tpope/vim-projectionist'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'w0rp/ale'
+Plugin 'regreplop.vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-surround'
+Plugin 'YankRing.vim'
+Plugin 'ZoomWin'
+call vundle#end()
+
+filetype plugin indent on
+
+runtime! init/**.vim
