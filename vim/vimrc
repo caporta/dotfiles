@@ -4,6 +4,7 @@ set number
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 set ttimeoutlen=10
 set backspace=indent,eol,start
 set expandtab tabstop=2 shiftwidth=2
