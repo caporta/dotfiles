@@ -1,14 +1,28 @@
 [core]
-	editor = vim
-[user]
-	name = Chris Aporta
-[alias]
-	co = checkout
-	st = status
-	br = branch
-	ci = commit
-	bi = bisect
-	dc = diff --cached
-	pushf = push --force-with-lease
+  editor = vim
 [push]
-	default = current
+  default = current
+[merge]
+  ff = only
+[fetch]
+  prune = true
+[credential]
+  helper = osxkeychain
+[color]
+  ui = auto
+[alias]
+  aa = add --all
+  ap = add --patch
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  ci = commit
+  co = checkout
+  st = status
+  bi = bisect
+  br = branch
+  lod = log --oneline --decorate
+  rim = rebase -i origin/master
+  pushf = push --force-with-lease
+  dc = diff --cached
+[user]
+  name = caporta
+  email = caporta@users.noreply.github.com
