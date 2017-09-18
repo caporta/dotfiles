@@ -176,4 +176,12 @@ map <D-F> :Ag<Space>
 " Convert a word to to let(:word) { double(:word) }
 nmap <leader>ld <Plug>LocalMakelet
 
+" map :RainbowParenthesesToggle to shortcut
 nmap <leader>rp :RainbowParenthesesToggle<CR>
+
+" map :ALEToggle to shortcut
+nmap <leader>at :ALEToggle<CR>
+
+" apply smartcase to * and # search
+:nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+:nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
