@@ -1,6 +1,8 @@
 syntax on
 filetype off
 set number
+set list
+set listchars=trail:•
 set ignorecase
 set smartcase
 set incsearch
