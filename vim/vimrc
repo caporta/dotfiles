@@ -48,6 +48,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'alampros/vim-styled-jsx'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 call vundle#end()
