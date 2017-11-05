@@ -185,6 +185,9 @@ nmap <leader>at :ALEToggle<CR>
 " map :HTTPClientDoRequest to shortcut
 nmap <leader>http :HTTPClientDoRequest<CR>
 
+" map :Goyo to shortcut
+nmap <leader>goyo :Goyo<CR>
+
 " apply smartcase to * and # search
 nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
