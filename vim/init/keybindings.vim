@@ -171,7 +171,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 map <D-F> :Ag<Space>
 
 " YankRing show registers
-:nnoremap <silent> <F6> :YRShow<CR>
+nnoremap <silent> <F6> :YRShow<CR>
 
 " Convert a word to to let(:word) { double(:word) }
 nmap <leader>ld <Plug>LocalMakelet
@@ -182,6 +182,9 @@ nmap <leader>rp :RainbowParenthesesToggle<CR>
 " map :ALEToggle to shortcut
 nmap <leader>at :ALEToggle<CR>
 
+" map :HTTPClientDoRequest to shortcut
+nmap <leader>http :HTTPClientDoRequest<CR>
+
 " apply smartcase to * and # search
-:nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
-:nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap * /\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap # ?\<<C-R>=expand('<cword>')<CR>\><CR>
