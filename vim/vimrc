@@ -10,6 +10,8 @@ set hlsearch
 set ttimeoutlen=10
 set backspace=indent,eol,start
 set expandtab tabstop=2 shiftwidth=2
+set directory=~/.vim/tmp//
+set backupdir=~/.vim/tmp//
 
 "set runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
