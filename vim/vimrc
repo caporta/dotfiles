@@ -2,11 +2,12 @@ syntax on
 filetype off
 set number
 set list
-set listchars=trail:•
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set mouse=a
+set listchars=tab:▸\ ,trail:•
 set ttimeoutlen=10
 set backspace=indent,eol,start
 set expandtab tabstop=2 shiftwidth=2
