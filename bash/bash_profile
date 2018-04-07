@@ -9,21 +9,24 @@ umask 0002
 # Revert to traditional ASCII collation order (not necessary for Mac OS)
 # export LANG=POSIX
 
-# ignore dupes in command history
-# && increase history size to 1000 lines
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 
-# global aliases
-alias profile="vim $HOME/.bash_profile"
-alias sp=". $HOME/.bash_profile"
+# aliases
+alias cls="clear"
+alias dc='docker-compose'
 alias grep="grep --color"; export GREP_COLOR='0;31'
+alias logwatch="tail -f /var/log/system.log"
 alias ls="ls -G"; export LSCOLORS="bxex"
 alias lsl="ls -lFaith"
-alias cls="clear"
-alias logwatch="tail -f /var/log/system.log"
+alias pgconf="nvim /usr/local/var/postgres/postgresql.conf";
+alias profile="nvim $HOME/.bash_profile"
+alias sp=". $HOME/.bash_profile"
+alias vi="nvim"
+alias vim="nvim"
+alias vinit="nvim $HOME/.config/nvim/init.vim"
 
-# shell functions
+# functions
 grab () {
   ps aux | grep $1
 }
@@ -70,26 +73,25 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# pyenv virtualenv
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
   PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-# rustup
+# rust
 . $HOME/.cargo/env
 
 # postgres
 export PGDATA='/usr/local/var/postgres'
 export PGHOST=localhost
-alias start-pg='pg_ctl -l $PGDATA/server.log start'
-alias stop-pg='pg_ctl stop -m fast'
-alias show-pg-status='pg_ctl status'
-alias restart-pg='pg_ctl reload'
 
 # editor
-export VISUAL=/usr/local/bin/vim
-export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/nvim
+export EDITOR=/usr/local/bin/nvim
 
 # bash prompt && git
 source ~/.git-completion.bash
