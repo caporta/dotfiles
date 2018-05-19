@@ -62,28 +62,16 @@ twigremote () {
   done | sort -r
 }
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# nodenv
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
 # jenv (configure JVM in jenv with `jenv add /Library/Java/JavaVirtualMachines/<version>/Contents/Home`)
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
-# pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# pyenv virtualenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# pipenv
+if which pipenv > /dev/null; then eval "$(pipenv --completion)"; fi
 
 export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
   PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
-
-# rust
-. $HOME/.cargo/env
 
 # postgres
 export PGDATA='/usr/local/var/postgres'
