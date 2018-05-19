@@ -1,0 +1,8 @@
+set completion-ignore-case On
+set editing-mode vi
+
+$if mode=vi
+set keymap vi-insert
+# extends ctrl-l to insert mode
+Control-l: clear-screen
+$endif
