@@ -35,7 +35,13 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 call plug#end()
 
-set number
+set number relativenumber
+augroup numbertoggle
+ autocmd!
+ autocmd WinEnter,FocusGained,InsertLeave * set relativenumber
+ autocmd WinLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
 set list
 set ignorecase
 set smartcase
@@ -50,8 +56,8 @@ set noshowmode
 
 " NEOVIM
 """""""""""""""""""""""""""
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = $HOME.'/.local/share/virtualenvs/neovim2-oG0QFWHl/bin/python'
+let g:python3_host_prog = $HOME.'/.local/share/virtualenvs/neovim3-S6XTvEfg/bin/python'
 
 " LIGHTLINE
 """""""""""""""""""""""""""
@@ -214,4 +220,4 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 
 " FZF
 map <Leader>f :Files<CR>
-map <Leader>ag :Ag<CR>
+map <Leader>a :Ag<CR>
