@@ -65,6 +65,9 @@ twigremote () {
 # jenv (configure JVM in jenv with `jenv add /Library/Java/JavaVirtualMachines/<version>/Contents/Home`)
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # pipenv
 if which pipenv > /dev/null; then eval "$(pipenv --completion)"; fi
 
@@ -81,12 +84,18 @@ export PGHOST=localhost
 export VISUAL=/usr/local/bin/nvim
 export EDITOR=/usr/local/bin/nvim
 
-# bash prompt && git
+# git
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
-export PS1='\[\e[3m\]♖ ♔ ♖  \[\e[3m\]\W$(__git_ps1 " \[\e[3;31m\](%s)\[\e[0m\]")\[\e[3m\]\[\e[0m\] >>> '
+
+# prompt
+RED="$(tput setaf 1)"
+YELLOW="$(tput setaf 3)"
+GREEN="$(tput setaf 2)"
+WHITE="$(tput setaf 7)"
+export PS1='$RED>$YELLOW>$GREEN>$WHITE \W$(__git_ps1 " $YELLOW(%s)") $RED>$YELLOW>$GREEN>\[\e[m\] '
 
 #tracing
 export PS4='$LINENO + '
