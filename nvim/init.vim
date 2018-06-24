@@ -216,3 +216,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 " FZF
 map <Leader>f :Files<CR>
 map <Leader>a :Ag<CR>
+
+" Dispatch
+map <Leader>ds :Dispatch
+map <Leader>di :Start
+
