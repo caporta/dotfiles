@@ -221,12 +221,12 @@ map <Leader>f :Files<CR>
 map <Leader>a :Ag<CR>
 
 " Vimux
-map <Leader>rr :VimuxRunCommand("
-map <Leader>rd :VimuxRunCommandInDir("
-map <Leader>rp :VimuxPromptCommand<CR>
-map <Leader>r1 :VimuxRunLastCommand<CR>
-map <Leader>ri :VimuxInspectRunner<CR>
-map <Leader>rq :VimuxCloseRunner<CR>
-map <Leader>rs :VimuxStopRunner<CR>
-map <Leader>rc :VimuxClearRunner<CR>
-map <Leader>rz :VimuxZoomRunner<CR>
+map <Leader>vr :VimuxRunCommand("
+map <Leader>vd :VimuxRunCommandInDir("
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>v1 :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vq :VimuxCloseRunner<CR>
+map <Leader>vs :VimuxStopRunner<CR>
+map <Leader>vc :VimuxClearRunner<CR>
+map <Leader>vz :VimuxZoomRunner<CR>
