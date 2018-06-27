@@ -8,6 +8,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'benmills/vimux'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
@@ -17,7 +18,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -37,9 +37,9 @@ call plug#end()
 
 set number relativenumber
 augroup numbertoggle
- autocmd!
- autocmd WinEnter,FocusGained,InsertLeave * set relativenumber
- autocmd WinLeave,FocusLost,InsertEnter * set norelativenumber
+  autocmd!
+  autocmd WinEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd WinLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
 set list
@@ -206,6 +206,9 @@ imap <F1>           <Nop>
 " Easy access to the shell
 map <Leader><Leader> :!
 
+" save on ESC
+inoremap <Esc> <Esc>:w<CR>
+
 " Recalculate diff when it gets messed up.
 nmap du :diffupdate<CR>
 
@@ -217,7 +220,13 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 map <Leader>f :Files<CR>
 map <Leader>a :Ag<CR>
 
-" Dispatch
-map <Leader>ds :Dispatch
-map <Leader>di :Start
-
+" Vimux
+map <Leader>rr :VimuxRunCommand("
+map <Leader>rd :VimuxRunCommandInDir("
+map <Leader>rp :VimuxPromptCommand<CR>
+map <Leader>r1 :VimuxRunLastCommand<CR>
+map <Leader>ri :VimuxInspectRunner<CR>
+map <Leader>rq :VimuxCloseRunner<CR>
+map <Leader>rs :VimuxStopRunner<CR>
+map <Leader>rc :VimuxClearRunner<CR>
+map <Leader>rz :VimuxZoomRunner<CR>
