@@ -137,6 +137,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let mapleader = " "
 let maplocalleader = " "
 
+" Edit alternate (previous) file. Used mostly for toggling
+map <leader><leader> <C-^>
+
 " Gracefully handle holding shift too long after : for common commands
 cabbrev W w
 cabbrev Q q
@@ -202,9 +205,6 @@ map <MiddleMouse>   <Nop>
 imap <MiddleMouse>  <Nop>
 map <F1>            <Nop>
 imap <F1>           <Nop>
-
-" Easy access to the shell
-map <Leader><Leader> :!
 
 " save on ESC
 inoremap <Esc> <Esc>:w<CR>
