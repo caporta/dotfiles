@@ -25,6 +25,7 @@ alias sp=". $HOME/.bash_profile"
 alias vi="nvim"
 alias vim="nvim"
 alias vinit="nvim $HOME/.config/nvim/init.vim"
+alias tconf="nvim $HOME/.tmux.conf"
 
 # functions
 grab () {
@@ -68,9 +69,9 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# pipenv
-if which pipenv > /dev/null; then eval "$(pipenv --completion)"; fi
-
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
   PIP_REQUIRE_VIRTUALENV="" pip "$@"
