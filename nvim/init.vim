@@ -56,8 +56,8 @@ set noshowmode
 
 " NEOVIM
 """""""""""""""""""""""""""
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = $HOME.'/.local/share/virtualenvs/neovim2-jjLPz5fr/bin/python'
+let g:python3_host_prog = $HOME.'/.local/share/virtualenvs/neovim3-_KFLpCk5/bin/python'
 " LIGHTLINE
 """""""""""""""""""""""""""
 let g:lightline = {
