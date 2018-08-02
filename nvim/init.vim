@@ -35,13 +35,7 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
 call plug#end()
 
-set number relativenumber
-augroup numbertoggle
-  autocmd!
-  autocmd WinEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd WinLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
-
+set number
 set list
 set ignorecase
 set smartcase
