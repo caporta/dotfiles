@@ -33,6 +33,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'ervandew/supertab'
 Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
 call plug#end()
 
 set number
@@ -223,3 +226,8 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vs :VimuxStopRunner<CR>
 map <Leader>vc :VimuxClearRunner<CR>
 map <Leader>vz :VimuxZoomRunner<CR>
+
+" bundler.vim
+map <Leader>bo :Bopen<CR>
+map <Leader>bs :Bsplit<CR>
+map <Leader>bv :Bvsplit<CR>
