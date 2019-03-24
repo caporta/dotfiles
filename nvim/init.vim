@@ -6,36 +6,36 @@
 "
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'joshdick/onedark.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-fugitive'
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
+Plug 'shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-jedi'
-Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-Plug 'ervandew/supertab'
-Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-vinegar'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 set number
