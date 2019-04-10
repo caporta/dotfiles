@@ -34,6 +34,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/YankRing.vim'
 Plug 'w0rp/ale'
 Plug 'zchee/deoplete-jedi'
 call plug#end()
