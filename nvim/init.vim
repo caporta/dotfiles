@@ -129,6 +129,24 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" FZF
+"""""""""""""""""""""""""""
+" CTRL-A CTRL-Q to select all and build quickfix list
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+
+
 " KEYBINDINGS
 """""""""""""""""""""""""""
 let mapleader = " "
@@ -216,6 +234,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 " FZF
 map <Leader>f :Files<CR>
 map <Leader>a :Ag<CR>
+map <Leader>b :Buffers<CR>
 
 " Vimux
 map <Leader>vr :VimuxRunCommand("
