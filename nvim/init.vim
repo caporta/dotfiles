@@ -95,6 +95,7 @@ let g:deoplete#enable_at_startup = 1
 " JEDI
 """""""""""""""""""""""""""
 let g:jedi#completions_enabled = 0
+let g:jedi#show_call_signatures = 0
 
 " SUPERTAB
 """""""""""""""""""""""""""
